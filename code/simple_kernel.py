@@ -1,13 +1,9 @@
-from function import get_training_data
+from function import get_training_data, calculate_daily_score
 
 market_train_df, news_train_df = get_training_data()
-print(type(market_train_df))
 
+my_model = train_my_model_daily(market_train_df, news_train_df) # # TODO:
 
-# train_my_model(market_train_df, news_train_df)
-#
-# for (market_obs_df, news_obs_df, predictions_template_df) in env.get_prediction_days():
-#   predictions_df = make_my_predictions(market_obs_df, news_obs_df, predictions_template_df)
-#   env.predict(predictions_df)
-#
-# env.write_submission_file()
+predict_ys = my_predict() ## TODO:
+
+daily_score_x = calculate_daily_score(predict_ys)
